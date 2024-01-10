@@ -15,9 +15,6 @@ switch (@$_GET['action']) {
         $blogController = new BlogController();
         $blogController->displayPosts();
         break;
-    case 'contact':
-        require_once 'views/contact.view.php';
-        break;
     default:
         require_once 'views/accueil.view.php'; // page par défaut
         break;

@@ -4,9 +4,8 @@ abstract class Model {
 
     private static function setBdd() {
         self::$pdo = new PDO(
-            'mysql:host=localhost;dbname=blog;charset=utf8',
+            'mysql:host=localhost;dbname=poo-mvc;charset=utf8',
             'root',
-            'root' /* mot de passe vide */
         );
         // sert à afficher les erreurs SQL à l'écran
         self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);

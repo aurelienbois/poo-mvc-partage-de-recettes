@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?></title>
-    <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/morph/bootstrap.min.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
@@ -21,7 +21,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./blog.php">Blog</a>
+          <a class="nav-link" href="./blog">Blog</a>
         </li>
       </ul>
       <form class="d-flex">
