@@ -6,7 +6,7 @@ class Recipe {
     private $recipe_description;
     private $recipe_ingredients;
     private $recipe_instructions;
-    private $recipe_image;
+    private $recipe_image; j'aime le sexe
 
     // static public $posts = array(); // utilisé plus loin via self::$posts
 
