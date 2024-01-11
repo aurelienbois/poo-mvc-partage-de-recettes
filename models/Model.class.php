@@ -4,7 +4,7 @@ abstract class Model {
 
     private static function setBdd() {
         self::$pdo = new PDO(
-            'mysql:host=localhost;dbname=poo-mvc;charset=utf8',
+            'mysql:host=localhost;dbname=poo-mvc-recipes;charset=utf8',
             'root',
         );
         // sert à afficher les erreurs SQL à l'écran

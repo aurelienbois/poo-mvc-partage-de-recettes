@@ -26,23 +26,22 @@ SET time_zone = "+00:00";
 -- Structure de la table `posts`
 --
 
-CREATE TABLE `posts` (
+CREATE TABLE `recipes` (
   `id` int(11) NOT NULL,
-  `header` varchar(150) NOT NULL,
-  `title` varchar(150) NOT NULL,
-  `author` varchar(150) NOT NULL,
-  `image` varchar(150) NOT NULL,
-  `body` text NOT NULL,
-  `date` date NOT NULL
+  `recipe_title` varchar(150) NOT NULL,
+  `recipe_description` text NOT NULL,
+  `recipe_ingredients` varchar(255) NOT NULL,
+  `recipe_instructions` text NOT NULL,
+  `recipe_image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `posts`
 --
 
-INSERT INTO `posts` (`id`, `header`, `title`, `author`, `image`, `body`, `date`) VALUES
-(1, 'Les nouvelles les plus étranges de la semaine', 'Avec des extraterrestres, des pingouins et des poissons-rouges', 'Professeur Zorglub', 'https://picsum.photos/319/180', 'Des chercheurs découvrent que les chats peuvent communiquer en morse. Une ville construite entièrement en bonbons attire des milliers de visiteurs. Un homme se réveille après 10 ans de coma et découvre que sa femme l\'a quitté pour un extraterrestre. Un poisson-rouge se fait passer pour un requin et terrorise les autres poissons. Un pingouin est arrêté en état d\'ivresse dans un bar de Bretagne.', '2023-10-24'),
-(2, 'Les nouvelles du monde, ce qui s\'est passé cette semaine', 'Des marins à la dérive, des pirates et des naufragés', 'Capitaine Haddock', 'https://picsum.photos/318/180', 'Des marins se sont échoués sur une île déserte. Des pirates ont attaqué un navire de croisière. Un naufragé a été retrouvé sur une île déserte.', '2023-12-19');
+INSERT INTO `recipes` (`id`, `recipe_title`, `recipe_description`, `recipe_ingredients`, `recipe_instructions`, `recipe_image`) VALUES
+(1, 'Poulet au curry', 'Un plat épicé et savoureux', 'Poulet, curry, lait de coco, riz', 'Faire revenir le poulet dans une poêle avec de l\'huile d\'olive. Ajouter le curry et le lait de coco. Laisser mijoter 20 minutes. Servir avec du riz.', 'https://images.unsplash.com/photo-1581093458791-9d3c9ebe9f8e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y3Vycnl8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80'),
+(2, 'Pâtes à la carbonara', 'Un plat simple et délicieux', 'Pâtes, lardons, crème fraîche, oeufs, parmesan', 'Faire cuire les pâtes. Faire revenir les lardons dans une poêle. Ajouter la crème fraîche et les oeufs. Mélanger avec les pâtes. Ajouter le parmesan.', 'https://www.cuisineaz.com/assets/recipe/2017/03/31/1024x576/parmesan-oeuf-creme-lardons-1080.jpg');
 
 --
 -- Index pour les tables déchargées
@@ -51,7 +50,7 @@ INSERT INTO `posts` (`id`, `header`, `title`, `author`, `image`, `body`, `date`)
 --
 -- Index pour la table `posts`
 --
-ALTER TABLE `posts`
+ALTER TABLE `recipes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -61,7 +60,7 @@ ALTER TABLE `posts`
 --
 -- AUTO_INCREMENT pour la table `posts`
 --
-ALTER TABLE `posts`
+ALTER TABLE `recipes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
