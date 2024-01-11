@@ -10,8 +10,8 @@ class BlogController
     }
     public function displayRecipes()
     {
-        global $posts; // on récupère la variable globale $posts en la créant dans l'espace de nom global
-        $posts = $this->recipeManager->getRecipes(); // on récupère les posts depuis la base de données
+        global $recipes; // on récupère la variable globale $posts en la créant dans l'espace de nom global
+        $recipes = $this->recipeManager->getRecipes(); // on récupère les posts depuis la base de données
         require_once('views/blog.view.php');
     }
 }

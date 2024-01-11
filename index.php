@@ -13,7 +13,7 @@ switch (@$_GET['action']) {
     case 'blog':
         require_once 'controllers/Blog.controller.php';
         $blogController = new BlogController();
-        $blogController->displayPosts();
+        $blogController->displayRecipes();
         break;
     default:
         require_once 'views/accueil.view.php'; // page par défaut

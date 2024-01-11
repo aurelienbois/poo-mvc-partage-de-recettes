@@ -24,9 +24,9 @@ class Recipe {
     public function setRecipeTitle($recipe_title) { $this->recipe_title = $recipe_title; }
     public function getRecipeDescription() { return $this->recipe_description; }
     public function setRecipeDescription($recipe_description) { $this->recipe_description = $recipe_description; }
-    public function getRecipeIngredients() { return $this->recipe_ingredients; }
+    public function getRecipeIngredients() { return explode(',', $this->recipe_ingredients); }
     public function setRecipeIngredients($recipe_ingredients) { $this->recipe_ingredients = $recipe_ingredients; }
-    public function getRecipeInstructions() { return $this->recipe_instructions; }
+    public function getRecipeInstructions() { return explode(',', $this->recipe_instructions); }
     public function setRecipeInstructions($recipe_instructions) { $this->recipe_instructions = $recipe_instructions; }
     public function getRecipeImage() { return $this->recipe_image; }
     public function setRecipeImage($recipe_image) { $this->recipe_image = $recipe_image; }

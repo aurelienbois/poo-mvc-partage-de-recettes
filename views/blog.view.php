@@ -1,24 +1,37 @@
 <?php
-require_once ('models/Post.class.php');
+require_once ('models/Recipe.class.php');
 ob_start(); // start c'est comme une banane dans le pot d'échappement de PHP
 ?>
 <h1>Blog</h1>
-<?php  foreach ($posts as $p) { ?>
+<?php  foreach ($recipes as $r) { ?>
 <div class="card mb-3">
     <a href="#" class="post text-body text-decoration-none">
-        <h3 class="card-header"><?= $p->getHeader() ?></h3>
+        <img src="<?= $r->getRecipeImage() ?>" alt="...">
         <div class="card-body">
-            <h5 class="card-title"><?= $p->getTitle() ?></h5>
-            <h6 class="card-subtitle text-muted"><?= $p->getAuthor() ?></h6>
+            <h5 class="card-title"><?= $r->getRecipeTitle() ?></h5>
+            <p class="card-text"><?= $r->getRecipeDescription() ?></p>
         </div>
-        <img src="<?= $p->getImage() ?>" alt="...">
-        <div class="card-body">
-            <p class="card-text"><?= nl2br($p->getContent()) ?></p>
+        <div>
+            <ul>
+                <?php
+                foreach ($r->getRecipeIngredients() as $ingredient){
+                ?>
+                <li><?= $ingredient ?></li>
+                <?php
+                };
+                ?>
+            </ul>
         </div>
-        <div class="card-footer text-muted">
+        <div>
+            <ul>
             <?php
-                echo $p->getDate(true);
-            ?>
+                foreach ($r->getRecipeInstructions() as $instruction){
+                ?>
+                <li><?= $instruction ?></li>
+                <?php
+                };
+                ?>
+            </ul>
         </div>
     </a>
     <div class="card-body">
@@ -27,8 +40,8 @@ ob_start(); // start c'est comme une banane dans le pot d'échappement de PHP
     </div>
 </div>
 <?php } ?>
-<a href="#"><button type="button" class="btn btn-secondary">Ajouter un post</button></a>
+<a href="#"><button type="button" class="btn btn-secondary">Ajouter une recette</button></a>
 <?php
-$title = 'Blog ~ Partage de receettes';
+$title = 'Blog ~ Partage de recettes';
 $content = ob_get_clean(); // clean c'est comme retirer la banane du pot d'échappement
 require_once 'template.php';
