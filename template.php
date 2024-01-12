@@ -16,8 +16,9 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
       <?php 
       $listliens = [
-        'Accueil' => './',
-        'Blog' => './blog'
+        'Accueil' => './accueil',
+        'Blog' => './blog',
+        'Contact' => './contact'
       ];
       ?>
       <ul class="navbar-nav me-auto">
