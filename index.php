@@ -5,9 +5,6 @@ ini_set('display_errors', 1); // utile pour les développeurs
 ini_set('display_startup_errors', 1); // utile pour les développeurs
 error_reporting(E_ALL);
 
-//url = /recipe/lire/titre-de-la-recette
-echo $_SERVER['REQUEST_URI'];
-
 $url = explode(
     '/', // séparateur
     filter_var( // nettoyage
@@ -16,15 +13,11 @@ $url = explode(
     )
 );
 
-$lastUrl = end($url); // on récupère le dernier élément du tableau8
-
-echo '<pre>';
-echo 'lastUrl : ' . $lastUrl . '<br>';
-echo '</pre>';
+$lastUrl = end($url); // on récupère le dernier élément du tableau
 
 $map = [
-    'accueil' => ['acceuil', 'accueil', ''],
-    'blog' => ['blog', 'blog', ''],
+    'accueil' => ['accueil', 'accueil', ''],
+    'blog' => ['blog', 'lire', ''],
     'contact' => ['contact', 'contact', ''],
     '' => ['accueil', 'accueil', ''],
 ];
@@ -40,15 +33,6 @@ if (is_numeric($lastUrl)) {
     $action = 'accueil';
     $id = '';
 }
-
-
-
-//on ne garde que les 3 derniers éléments du tableau
-list($controller,$action,$id) = array_slice($url, -3, 3, false);
-
-echo '<pre>';
-print_r($url);
-echo '</pre>';
 
 // routeur
 switch ($controller) {
