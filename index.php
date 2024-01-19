@@ -18,7 +18,9 @@ $lastUrl = end($url); // on récupère le dernier élément du tableau
 $map = [
     'accueil' => ['accueil', 'accueil', ''],
     'blog' => ['blog', 'lire', ''],
-    'contact' => ['contact', 'contact', ''],
+    'addRecipe' => ['blog', 'addRecipe', ''],
+    'editRecipe' => ['blog', 'editRecipe', $lastUrl],
+    'deleteRecipe' => ['blog', 'deleteRecipe', $lastUrl],
     '' => ['accueil', 'accueil', ''],
 ];
 
@@ -42,11 +44,27 @@ switch ($controller) {
     case 'blog':
         require_once 'controllers/Blog.controller.php';
         $blogController = new BlogController();
-        $blogController->displayRecipes();
+        switch ($action) {
+            case 'lire':
+                $blogController->displayRecipes();
+                break;
+            case 'addRecipe':
+                $blogController->create();
+                break;
+            case 'editRecipe':
+                $blogController->edit($id);
+                break;
+            case 'deleteRecipe':
+                $blogController->delete($id);
+                break;
+            case 'storeRecipe':
+                $blogController->store();
+                break;
+            case 'updateRecipe':
+                $blogController->update($id);
+                break;
+        }
         break;
     default:
         require_once 'views/accueil.view.php'; // page par défaut
-        break;
 }
-
-?>
